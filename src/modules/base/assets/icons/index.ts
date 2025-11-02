@@ -1,0 +1,10 @@
+export { default as logo } from "./logo.svg";
+export { default as iconMemo } from "./icon_memo.svg";
+export { default as iconChallenge } from "./icon_challenge.svg";
+export { default as iconInfo } from "./icon_info.svg";
+export { default as iconMenu } from "./icon_menu.svg";
+export { default as iconPolygon } from "./polygon.svg";
+export { default as iconKnife } from "./icon_knife.svg";
+export { default as iconCup } from "./icon_cup.svg";
+export { default as iconClose } from "./icon_close.svg";
+export { default as componentScroll } from "./component_scroll.svg";
