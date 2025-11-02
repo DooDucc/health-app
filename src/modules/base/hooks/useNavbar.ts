@@ -1,14 +1,10 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { logout } from "../../authentication/store/authenticationSlice";
-import type { AppDispatch } from "../store";
 
 export const useNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-  const dispatch = useDispatch<AppDispatch>();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -34,12 +30,6 @@ export const useNavbar = () => {
     navigate("/");
   };
 
-  const handleLogout = () => {
-    dispatch(logout());
-    setIsMenuOpen(false);
-    navigate("/");
-  };
-
   const handleMenuItemClick = (item: string) => {
     setIsMenuOpen(false);
     switch (item) {
@@ -48,9 +38,6 @@ export const useNavbar = () => {
         break;
       case "コラム一覧":
         navigate("/column");
-        break;
-      case "ログアウト":
-        handleLogout();
         break;
       default:
         break;
@@ -64,7 +51,6 @@ export const useNavbar = () => {
     "選択中のコース",
     "コラム一覧",
     "設定",
-    "ログアウト",
   ];
 
   return {
@@ -76,7 +62,6 @@ export const useNavbar = () => {
     handleNotificationClick,
     handleLogoClick,
     handleMenuItemClick,
-    handleLogout,
     menuItems,
   };
 };
